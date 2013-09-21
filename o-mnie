@@ -16,6 +16,7 @@ Spojrzymy także na większy obrazek i nauczymy się jak:
 - tworzyć aplikację bez backendu
 - utrzymywać strukturę projektu
 - zintegrować angularową aplikację z serwerem
+- przygotowywać skrypty pod minifikację
 
 Prezentacja przeznaczona jest dla osób początkujących. Podczas prezentacji pojawiać się będą fragmenty kodu w JavaScript, więc wymagana jest podstawowa znajomość JavaScriptu. 
 
