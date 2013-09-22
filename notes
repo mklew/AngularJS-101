@@ -9,6 +9,7 @@
 1079 - znajduje element z klasą ng-app i uruchamia bootstrap ze znalezionym elementem i nazwą modułu 
 1138 bootstrap
 2980 createInjector tworzenie injectora
+3007 - ładowane są moduły, a potem wywoływane są bloki "run"
 3025 różnica pomiędzy provider, factory, service jest to tak naprawdę syntax sugar
 4211 $CompileProvider
 5522 rejestracja kontrolerów

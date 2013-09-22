@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html ng-app="app">
 	<head>
-		<title>Angular 101 Demo Template</title>
+		<title>Angular 101 Dependency Injection demo</title>
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     	<!-- Bootstrap -->
     	<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" media="screen">
     	<style>
-    		body {
+    		body, section {
 			  padding-top: 50px;
 			}
 			.starter-template {
 			  padding: 40px 15px;
 			  text-align: center;
+			}
+			.block {
+				height: 1000px;
 			}
 		</style>
 	</head>
@@ -19,21 +22,60 @@
 		<div class="navbar navbar-inverse navbar-fixed-top">
 	      <div class="container">
 	        <div class="navbar-header">
-	          <a class="navbar-brand" href="#">Angular 101</a>
-	        </div>
-	        <div class="collapse navbar-collapse">
+	          <a class="navbar-brand" href="#">Angular 101 - Dependency Injection</a>
 	          <ul class="nav navbar-nav">
-	            <li class="active"><a href="#">Home</a></li>
+	            <li><a href="#lesson1">Lesson 1</a></li>
+	            <li><a href="#lesson2">Lesson 2</a></li>
+	            <li><a href="#lesson3">Lesson 3</a></li>
 	          </ul>
-	        </div><!--/.nav-collapse -->
+	        </div>
 	      </div>
+	      
 	    </div>
 
 	    <div class="container">
 
 	      <div class="starter-template">
-	        <h1>Bootstrap starter template. Angular Works if 1 + 2 = {{ 1 + 2 }}</h1>
-	      </div>
+	        <h1>This demo shows basics of dependency injection in Angular</h1>
+
+
+	        <section id="lesson1">
+	        	<header>
+	        		<h2>Lesson 1. Simple dependency injection of constants</h2>
+	        	</header>
+	        	<div>
+	        		<ul>
+			        	<li>Module1Constant {{ m1c }}</li>
+			        	<li>Module2Constant {{ m2c }}</li>
+			        	<li>Module3Constant {{ m3c }}</li>
+	        		</ul>		
+	        	</div>
+	        </section>
+
+	        <div class="block"></div>
+
+	        <section id="lesson2">
+	        	<header>
+	        		<h2>Lesson 2. Name clashing of concrete dependency</h2>
+	        	</header>
+	        	<div>
+		        	<p>NameClash <b>{{ clashed }}</b></p>
+	        	</div>
+	        </section>
+
+	        <div class="block"></div>
+
+			<section id="lesson3">
+	        	<header>
+	        		<h2>Lesson 3. Redefined modules</h2>
+	        		<h3>Sometimes order of script loading matters</h3>
+	        	</header>
+	        	<div>
+		        	<p>{{ module3depConstant }}</p>
+	        	</div>
+	        </section>
+
+	        <div class="block"></div>	        
 
 	    </div><!-- /.container -->
 
@@ -42,6 +84,11 @@
 	<script src="bower_components/angular-animate/angular-animate.js"></script>
 	<script src="bower_components/angular-mocks/angular-mocks.js"></script>
 	<script src="bower_components/angular-resource/angular-resource.js"></script>
-	<script src="scripts/app.js"></script>
+
+	<script src="scripts/module1.js"></script>	
+	<script src="scripts/app.js"></script>	
+	<script src="scripts/module3RedefinedDependency.js"></script>
+	<script src="scripts/module3.js"></script>		
+	<script src="scripts/module2.js"></script>
 
 </html>
