@@ -1,0 +1,18 @@
+1. Angular czeka na dom ready
+2. Angular szuka elementu z atrybutem ng-app initAngular 1079
+3. Angular znajduje nazwę modułu i woła bootstrap 1138
+4. Bootstrap tworzy injector dla aplikacji, ładowane są moduły
+5. angular kompiluje html począwszy od elementu z ng-app 4211
+
+9897 dirty checking
+
+1079 - znajduje element z klasą ng-app i uruchamia bootstrap ze znalezionym elementem i nazwą modułu 
+1138 bootstrap
+2980 createInjector tworzenie injectora
+3025 różnica pomiędzy provider, factory, service jest to tak naprawdę syntax sugar
+4211 $CompileProvider
+5522 rejestracja kontrolerów
+6830 InterpolateProvider - serwis odpowiadający za interpolację wyrażeń {{ }}
+8200 parser
+9481 Definicja Scope 
+9534 izolowany scope nie dziedziczy prototypowo 
