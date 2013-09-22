@@ -1,13 +1,16 @@
 O prezentacji
 -------------
-Celem prezentacji jest wprowadzenie słuchaczy w tematykę Angulara. AngularJS jest jednym z rodziny narzędzi do tworzenia nowoczesnych webaplikacji, które działają całkowicie po stronie klienta. Formułą prezentacji będą dema, które pozwolą zobaczyć i zrozumieć o co chodzi w Angularze oraz czym różni się development w Angularze od tradycyjnego podejścia do webaplikacji. Spojrzymy także bestii w oczy i przejrzymy źródła angulara.
+Celem prezentacji jest wprowadzenie słuchaczy w tematykę Angulara. AngularJS jest jednym z rodziny narzędzi do tworzenia nowoczesnych webaplikacji. Aplikacje te działają całkowicie po stronie klienta. 
+
+Formułą prezentacji będą dema, które pozwolą zobaczyć i zrozumieć o co chodzi w Angularze. Przyjrzymy się kolejno różnym elementom Angulara. Zobaczymy czym różni się development w Angularze od tradycyjnego podejścia do budowy webaplikacji. Spojrzymy także bestii w oczy i przejrzymy źródła Angulara.
 
 W ramach prezentacji omówione zostaną funkcjonalności i elementy składowe angulara
 - dependency injection - modularność angularowych webaplikacji
-- serwisy - przegląd angularowych serwisów oraz pisanie własnych serwisów
+- kontrolery - czyli C w MVC
+- serwisy - różne sposoby pisania własnych serwisów, krótki przegląd serwisów angulara
 - dyrektywy - używanie angularowych oraz pisanie własnych dyrektyw
 - routing - tworzenie single page apps w angularze
-- filtry - wykorzystywanie angularowych filtrów
+- filtry - wykorzystywanie angularowych filtrów oraz pisanie własnych
 - animacje - deklaratywne podejście do animacji
 
 W momencie gdy będziemy mieli feeling o co chodzi w Angularze zajrzymy do źródeł i zobaczymy w jaki sposób działa.
@@ -23,4 +26,4 @@ Prezentacja przeznaczona jest dla osób początkujących w tematyce Angulara. Fr
 
 O prelegencie
 -------------
-Jestem full stack developerem. Zajmuję się tworzeniem nowoczesnych webaplikacji. Praca nad frontem sprawia mi czasem więcej frajdy niż backend. Lubię czysty testowalny kod i długie nazwy zmiennych. Mam niską tolerancję na bylejakość. Zawodowo programuje w Javie. Hobbistycznie uczę się funkcyjnego programowania w Scali.
+Zawodowo programuje lekko ponad rok. Jestem full stack developerem. Lubię pracować nad frontem, który czasem sprawia więcej frajdy niż backend. Lubię czysty testowalny kod i długie nazwy zmiennych. Mam niską tolerancję na bylejakość. Hobbistycznie uczę się funkcyjnego programowania w Scali.
