@@ -1,15 +1,16 @@
 O prezentacji
 -------------
-Celem prezentacji jest wprowadzenie słuchaczy w tematykę Angulara. AngularJS jest jednym z rodziny narzędzi do tworzenia nowoczesnych webaplikacji, które działają całkowicie po stronie klienta. Formułą prezentacji będą dema, które pozwolą zobaczyć i zrozumieć o co chodzi w Angularze i czym różni się development w angularze od tradycyjnego podejścia do webaplikacji.
+Celem prezentacji jest wprowadzenie słuchaczy w tematykę Angulara. AngularJS jest jednym z rodziny narzędzi do tworzenia nowoczesnych webaplikacji, które działają całkowicie po stronie klienta. Formułą prezentacji będą dema, które pozwolą zobaczyć i zrozumieć o co chodzi w Angularze oraz czym różni się development w Angularze od tradycyjnego podejścia do webaplikacji. Spojrzymy także bestii w oczy i przejrzymy źródła angulara.
 
 W ramach prezentacji omówione zostaną funkcjonalności i elementy składowe angulara
-- jak to w ogóle działa
 - dependency injection - modularność angularowych webaplikacji
 - serwisy - przegląd angularowych serwisów oraz pisanie własnych serwisów
 - dyrektywy - używanie angularowych oraz pisanie własnych dyrektyw
 - routing - tworzenie single page apps w angularze
 - filtry - wykorzystywanie angularowych filtrów
 - animacje - deklaratywne podejście do animacji
+
+W momencie gdy będziemy mieli feeling o co chodzi w Angularze zajrzymy do źródeł i zobaczymy w jaki sposób działa.
 
 Spojrzymy także na większy obrazek i nauczymy się jak:
 - używać typowo frontendowych narzędzi podczas developmentu
@@ -18,7 +19,7 @@ Spojrzymy także na większy obrazek i nauczymy się jak:
 - zintegrować angularową aplikację z serwerem
 - przygotowywać skrypty pod minifikację
 
-Prezentacja przeznaczona jest dla osób początkujących. Podczas prezentacji pojawiać się będą fragmenty kodu w JavaScript, więc wymagana jest podstawowa znajomość JavaScriptu. 
+Prezentacja przeznaczona jest dla osób początkujących w tematyce Angulara. Fragmenty kodu będą bardzo proste(podstawowe konstrukcje JavaScript). Przeglądanie źródeł Angulara może być bardziej wymagające, ale nie trzeba będzie rozumieć każdej linijki, a jedynie koncepcję.
 
 O prelegencie
 -------------
