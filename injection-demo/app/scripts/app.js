@@ -2,7 +2,7 @@
 
 // Order of dependencies matters only when there is name clash in what they can provide
 // in this example its constant named 'NameClash'
-var app = angular.module("app", ['module1', 'module2', 'module3']);
+var app = angular.module("app", ['demo.utils', 'module1', 'module2', 'module3']);
 
 
 // Ex 1

@@ -27,11 +27,16 @@
 	      <div class="container">
 	        <div class="navbar-header">
 	          <a class="navbar-brand" href="#">Angular 101 - Dependency Injection</a>
+	        </div>
+	        <div class="collapse navbar-collapse">
 	          <ul class="nav navbar-nav">
 	            <li ng-class="{active : lesson == 1}"><a href="#lesson1" ng-click="lesson = 1">Lesson 1</a></li>
 	            <li ng-class="{active : lesson == 2}"><a href="#lesson2" ng-click="lesson = 2">Lesson 2</a></li>
 	            <li ng-class="{active : lesson == 3}"><a href="#lesson3" ng-click="lesson = 3">Lesson 3</a></li>
 	          </ul>
+	        </div><!--/.nav-collapse -->
+	        <div>
+	        	<timer key="injectionDemoTimer" minutes="10"></timer>
 	        </div>
 	      </div>
 	      
@@ -92,7 +97,9 @@
 	<script src="scripts/module2.js"></script>
 	<script src="scripts/module3RedefinedDependency.js"></script>
 	<script src="scripts/module3.js"></script>		
+	
 	<script src="scripts/app.js"></script>	
+	<script src="scripts/demo/demo-utils.js"></script>
 	
 		
 	
