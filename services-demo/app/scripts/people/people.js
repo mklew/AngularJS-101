@@ -42,9 +42,9 @@ appPeople.controller('PersonCtrl', ['$scope',  function($scope){
 	$scope.down = true;
 }]);
 
-appPeople.controller('PersonCtrlLesson2', ['$scope', 'PersonService',
- function($scope, PersonService){	
-	var personService = PersonService.getPersonService($scope.person);
+appPeople.controller('PersonCtrlLesson2', ['$scope', 'PersonServiceFactory',
+ function($scope, PersonServiceFactory){	
+	var personService = PersonServiceFactory.getPersonService($scope.person);
 	
 	$scope.fullName = personService.fullName();
 

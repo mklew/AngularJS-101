@@ -20,18 +20,18 @@ angular.module('app.services', [])
       return model.people.length;
     }
   })
-  .factory('PersonService', [function(){
-    function Service(person) {
+  .factory('PersonServiceFactory', [function(){
+    function PersonService(person) {
       this.person = person;
     }
 
-    Service.prototype.fullName = function(){
+    PersonService.prototype.fullName = function(){
       return this.person.name + ' ' + this.person.last;
     }
 
     return {
       getPersonService : function(person) {
-        return new Service(person);
+        return new PersonService(person);
       }
     }
   }])
@@ -43,7 +43,7 @@ angular.module('app.services', [])
     }
 
     this.$get = function() {
-      return function(person) {
+      return function fullName(person) {
         return person.name + separator + person.last;
       };
     }
