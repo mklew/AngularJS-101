@@ -22,10 +22,6 @@ angular.module('app.communication', [])
       CommunicationService.postMessage(msg);
       $scope.message = angular.copy(blankMessage);
     }
-
-    $scope.log = function(evt) {
-      console.log(evt);
-    }
   })
   .controller('ReadingCtrl', function($scope, CommunicationService){
     $scope.messages = CommunicationService.getMessages();

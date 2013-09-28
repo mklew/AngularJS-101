@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app.services', [])
-	.service('BasicService', ['$q', function($q){
+	.service('BasicService', function(){
     // Angular creates this service calling new on passed in function
     var model = {
       people : [
@@ -13,15 +13,13 @@ angular.module('app.services', [])
     };
 
     this.getPeople = function() {
-      var deferred = $q.defer();
-      deferred.resolve(model.people);
-      return deferred.promise;
+      return model.people;
     }
 
     this.countPeople = function() {
       return model.people.length;
     }
-  }])
+  })
   .factory('PersonService', [function(){
     function Service(person) {
       this.person = person;
