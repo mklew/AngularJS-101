@@ -8,10 +8,17 @@
     	<style>
     		body {
 			  padding-top: 50px;
+			  font-size : 22px;
 			}
 			.starter-template {
 			  padding: 40px 15px;
 			  text-align: center;
+			}
+			.more-space-at-bottom {
+				margin-bottom: 25px;
+			}
+			.block {
+				height: 1000px;
 			}
 		</style>
 	</head>
@@ -38,23 +45,38 @@
 
 	      <section id="lesson1">
 	      	<header>
-	      		<h2>How to use controllers</h2>
+	      		<h2>Lesson 1. How to use controllers</h2>
 	      	</header>
 	      	<div ng-controller="PeopleAppCtrl">
-	      		<div ng-controller="PeopleCtrl">
+	      		<span class="">Hello, I am <strong>{{ controllerName }}</strong></span>
+
+
+	      		<div class="col-md-offset-1" ng-controller="PeopleCtrl">
+	      			<p class="">Hello, I am <strong>{{ controllerName }}</strong></p>
+	      			<!-- people.length could be used instead -->
+	      			<p>There are {{ countPeople() }} people</p>
 	      			<div>
-	      				<div ng-repeat="person in people">
-	      					<p>{{ person.name }} {{ person.last }}
-	      					 works in {{ person.job}}</p>
+	      				<div ng-repeat="person in people"
+      						 ng-controller="PersonCtrl"
+      						 class="col-md-offset-1 more-space-at-bottom">
+	      					<p><small>Hello, I am <strong>{{ controllerName }}</strong></small></p>
+
+	      					<span ng-click="down=!down">{{ person.name }} {{ person.last }} 
+	      						<span class="glyphicon" 
+	      						ng-class="{'glyphicon-chevron-down' : down, 'glyphicon-chevron-up' : !down}"></span>
+      						</span>
+	      					<p ng-show="!down">works in {{ person.job }}</p>
 	      				</div>	
 	      			</div>
 	      		</div>
 	      	</div>
           </section>
 
+          <block></block>
+
           <section id="lesson2">
 	      	<header>
-	      		<h2>Using controller-as syntax</h2>
+	      		<h2>Lesson 2. Using controller-as syntax</h2>
 	      	</header>
 
           </section>
@@ -67,6 +89,7 @@
 	<script src="bower_components/angular-mocks/angular-mocks.js"></script>
 	<script src="bower_components/angular-resource/angular-resource.js"></script>
 	<script src="scripts/app.js"></script>
+	<script src="scripts/demo-utils.js"></script>
 	<script src="scripts/people/people.js"></script>
 
 </html>
