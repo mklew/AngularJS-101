@@ -20,18 +20,22 @@
 			.block {
 				height: 1000px;
 			}
+			.target { 
+				padding-top: 50px; 
+				margin-top: -50px;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="navbar navbar-inverse navbar-fixed-top">
 	      <div class="container">
 	        <div class="navbar-header">
-	          <a class="navbar-brand" href="#">Angular 101 - Controllers demo</a>
+	          <a class="navbar-brand" ng-click="lesson = 0" href="#">Angular 101 - Controllers demo</a>
 	        </div>
 	        <div class="collapse navbar-collapse">
 	          <ul class="nav navbar-nav">
-	            <li><a href="#lesson1">Lesson 1</a></li>
-	            <li><a href="#lesson2">Lesson 2</a></li>
+	            <li ng-class="{active : lesson == 1}"><a href="#lesson1" ng-click="lesson = 1">Lesson 1</a></li>
+	            <li ng-class="{active : lesson == 2}"><a href="#lesson2" ng-click="lesson = 2">Lesson 2</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>
@@ -43,7 +47,7 @@
 	        <h1>Demo shows how to use Angular controllers</h1>
 	      </div>
 
-	      <section id="lesson1">
+	      <section id="lesson1" class="target">
 	      	<header>
 	      		<h2>Lesson 1. How to use controllers</h2>
 	      	</header>
@@ -78,7 +82,7 @@
 
           <block></block>
 
-          <section id="lesson2">
+          <section id="lesson2" class="target">
 	      	<header>
 	      		<h2>Lesson 2. Using controller-as syntax</h2>
 	      	</header>
@@ -97,6 +101,8 @@
 	      	</div>
 
           </section>
+
+          <block></block>
 
 	    </div>
 

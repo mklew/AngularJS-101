@@ -16,6 +16,10 @@
 			.block {
 				height: 1000px;
 			}
+			.target { 
+				padding-top: 50px; 
+				margin-top: -50px;
+			}
 		</style>
 	</head>
 	<body>
@@ -24,9 +28,9 @@
 	        <div class="navbar-header">
 	          <a class="navbar-brand" href="#">Angular 101 - Dependency Injection</a>
 	          <ul class="nav navbar-nav">
-	            <li><a href="#lesson1">Lesson 1</a></li>
-	            <li><a href="#lesson2">Lesson 2</a></li>
-	            <li><a href="#lesson3">Lesson 3</a></li>
+	            <li ng-class="{active : lesson == 1}"><a href="#lesson1" ng-click="lesson = 1">Lesson 1</a></li>
+	            <li ng-class="{active : lesson == 2}"><a href="#lesson2" ng-click="lesson = 2">Lesson 2</a></li>
+	            <li ng-class="{active : lesson == 3}"><a href="#lesson3" ng-click="lesson = 3">Lesson 3</a></li>
 	          </ul>
 	        </div>
 	      </div>
@@ -38,8 +42,7 @@
 	      <div class="starter-template">
 	        <h1>This demo shows basics of dependency injection in Angular</h1>
 
-
-	        <section id="lesson1">
+	        <section id="lesson1" class="target">
 	        	<header>
 	        		<h2>Lesson 1. Simple dependency injection of constants</h2>
 	        	</header>
@@ -54,7 +57,7 @@
 
 	        <div class="block"></div>
 
-	        <section id="lesson2">
+	        <section id="lesson2" class="target">
 	        	<header>
 	        		<h2>Lesson 2. Name clashing of concrete dependency</h2>
 	        	</header>
@@ -65,7 +68,7 @@
 
 	        <div class="block"></div>
 
-			<section id="lesson3">
+			<section id="lesson3" class="target">
 	        	<header>
 	        		<h2>Lesson 3. Redefined modules</h2>
 	        		<h3>Sometimes order of script loading matters</h3>

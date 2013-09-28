@@ -1,0 +1,19 @@
+<div>
+	<div class="row">
+		<div class="col-md-1">
+			<span ng-click="refreshTimer()" class="pull-right glyphicon glyphicon-refresh"></span>
+		</div>
+		<div class=" ol-md-offset-1">
+			<div class="progress">
+			  
+			  <div class="progress-bar" 
+			  ng-class="{'progress-bar-success':!noTimeLeft, 'progress-bar-danger':noTimeLeft}"
+			  role="progressbar" aria-valuenow="{{percent()}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent()}}%">
+			    <span class="sr-only">{{percent()}}% of time gone</span>
+			  </div>
+
+			</div>
+		</div>	
+	</div>
+
+</div>
