@@ -1,5 +1,6 @@
 'use strict';
 
+// Lesson 1 - how to use controllers
 var appPeople = angular.module('app.people', []);
 
 /**
@@ -15,6 +16,10 @@ var appPeople = angular.module('app.people', []);
 
 appPeople.controller('PeopleAppCtrl', ['$scope', function($scope){
 	$scope.controllerName = 'PeopleAppCtrl';
+
+	$scope.alertMe = function(msg) {
+		alert(msg);
+	}
 }]);
 
 appPeople.controller('PeopleCtrl', ['$scope', function($scope){

@@ -65,7 +65,11 @@
 	      						<span class="glyphicon" 
 	      						ng-class="{'glyphicon-chevron-down' : down, 'glyphicon-chevron-up' : !down}"></span>
       						</span>
-	      					<p ng-show="!down">works in {{ person.job }}</p>
+	      					<div ng-show="!down">
+	      						<p>works in {{ person.job }}</p>
+	      						<button ng-click="alertMe(person.name)" type="button" class="btn btn-info">Say my name</button>
+	      					</div>
+	      					
 	      				</div>	
 	      			</div>
 	      		</div>
@@ -78,6 +82,19 @@
 	      	<header>
 	      		<h2>Lesson 2. Using controller-as syntax</h2>
 	      	</header>
+	      	<div ng-controller="OuterCtrl as outer">
+	      		<p>OuterCtrl name is {{ outer.name }}</p>
+
+	      		<div ng-controller="InnerCtrl as inner"
+	      			 class="col-md-offset-1">
+	      			<p>This is text content in inner ctrl</p>
+	      			<p>Using controller-as syntax I can explicitly access OuterCtrl</p>
+
+	      			<p>InnerCtrl name is {{ inner.name }}</p>
+	      			<p>OuterCtrl name is {{ outer.name }}</p>
+
+	      		</div>
+	      	</div>
 
           </section>
 
@@ -91,5 +108,6 @@
 	<script src="scripts/app.js"></script>
 	<script src="scripts/demo-utils.js"></script>
 	<script src="scripts/people/people.js"></script>
+	<script src="scripts/as.js"></script>
 
 </html>
