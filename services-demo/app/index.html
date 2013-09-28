@@ -24,6 +24,9 @@
 				padding-top: 80px; 
 				margin-top: -80px;
 			}
+			.nav {
+				font-size : 14px;
+			}
 		</style>
 	</head>
 	<body>
@@ -37,6 +40,7 @@
 	            <li ng-class="{active : lesson == 1}"><a href="#lesson1" ng-click="lesson = 1">Lesson 1</a></li>
 	            <li ng-class="{active : lesson == 2}"><a href="#lesson2" ng-click="lesson = 2">Lesson 2</a></li>
 	            <li ng-class="{active : lesson == 3}"><a href="#lesson3" ng-click="lesson = 3">Lesson 3</a></li>
+	            <li ng-class="{active : lesson == 4}"><a href="#lesson4" ng-click="lesson = 4">Lesson 4</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	        <div>
@@ -143,6 +147,31 @@
 
           <block></block>
 
+
+          <section id="lesson4" class="target">
+	      	<header>
+	      		<h2>Lesson 4. Using services for inter-controller communication</h2>
+	      	</header>
+	      	<div>
+	      		<div ng-controller="PostingCtrl">
+	      			<h3>Post some message</h3>
+	      			<input type="text" ng-keypress="$event.keyCode == 13 && postMessage(message)" ng-model="message.text"/>
+	      			<button ng-click="postMessage(message)" 
+	      			class="btn btn-success">Post</button>
+	      		</div>
+
+	      		<div ng-controller="ReadingCtrl">
+	      			<h3>Read messages in completely different scope</h3>
+	      			<div ng-repeat="msg in messages">
+	      				<p>{{ msg.text }}</p>
+	      			</div>
+	      		</div>
+	      	</div>
+          </section>
+
+          <block></block>
+
+
 	    </div>
 
 	</body>
@@ -154,5 +183,6 @@
 	<script src="scripts/demo/demo-utils.js"></script>
 	<script src="scripts/people/people.js"></script>
 	<script src="scripts/services/services.js"></script>
+	<script src="scripts/services/communication.js"></script>
 
 </html>

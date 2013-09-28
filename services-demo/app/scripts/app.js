@@ -1,3 +1,5 @@
 'use strict';
 
-var app = angular.module("app", ['demo.utils', 'app.people']);
+var app = angular.module("app", ['demo.utils', 
+	'app.people', 
+	'app.communication']);
