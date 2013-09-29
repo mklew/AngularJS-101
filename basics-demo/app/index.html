@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<title>Angular 101 Basics demo</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<!-- Bootstrap -->
+    	<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" media="screen">
+    	<style>
+    		body {
+			  padding-top: 50px;
+			  font-size : 22px;
+			}
+			.starter-template {
+			  padding: 40px 15px;
+			  text-align: center;
+			}
+			.block {
+				height: 1000px;
+			}
+			.target { 
+				padding-top: 80px; 
+				margin-top: -80px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <a class="navbar-brand" ng-click="lesson = 0" href="#">Angular 101 - Basics demo</a>
+	        </div>
+	        <div class="collapse navbar-collapse">
+	          <ul class="nav navbar-nav">
+	            <li ng-class="{active : lesson == 1}"><a href="#lesson1" ng-click="lesson = 1">Lesson 1</a></li>
+	            <li ng-class="{active : lesson == 2}"><a href="#lesson2" ng-click="lesson = 2">Lesson 2</a></li>
+	            <li ng-class="{active : lesson == 3}"><a href="#lesson3" ng-click="lesson = 3">Lesson 3</a></li>
+	          </ul>
+	        </div><!--/.nav-collapse -->
+	        <div>
+	        	<timer key="header" minutes="10"></timer>
+	        </div>
+	      </div>
+	    </div>
+
+	    <div class="container">
+
+	      <div class="starter-template">
+	        <h1>Angular basics</h1>
+	      </div>
+
+	      <section id="lesson1" class="target">
+	      	<header>
+	      		<h2>Lesson 1. How to load angular application</h2>
+	      	</header>
+	      	<div>
+	      		<!-- Lesson content -->
+	      	</div>
+          </section>
+
+	      <block></block>
+
+          <section id="lesson2" class="target">
+	      	<header>
+	      		<h2>Lesson 2. What's scope</h2>
+	      	</header>
+	      	<div ng-init="text = 'I am initialized via ng-init'">
+	      		<!-- Lesson content -->
+      			<pre>{{ model }}</pre>
+      			<pre ng-click="say('HELLO')">{{ model.job }}</pre>
+
+	      		<p>Interpolated text is: {{ someText }}</p>
+	      		<input type="text" ng-model="someText"/>
+	      	</div>
+          </section>
+
+          <block></block>
+
+          <section id="lesson3" class="target">
+	      	<header>
+	      		<h2>Lesson 3. More expressions</h2>
+	      	</header>
+	      	<div>
+	      		<!-- Lesson content -->
+	      		<p>Lets calculate: 1 + 2 = {{ 1 + 2 }}</p>
+	      		<div ng-init="obj = { name : 'John' }">
+	      			<pre>{{ obj }}</pre>
+	      			<p>This property exists - {{ obj.name }}</p>
+	      			<p>This does not {{ obj.name.iAmNotHere.AndNothing.Wrong.Happens }}</p>	
+	      		</div>
+	      	</div>
+          </section>
+
+          <block></block>
+
+	    </div>
+
+	</body>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/demo/demo-utils.js"></script>
+
+</html>
