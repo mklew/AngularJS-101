@@ -17,3 +17,16 @@
 8200 parser
 9481 Definicja Scope 
 9534 izolowany scope nie dziedziczy prototypowo 
+
+
+Inicjalizacja:
+Angular.js - funkcja bootstrap
+ 1. Dodaje rootElement
+ 2. Tworzony jest injector - injector zapewnia DI, konfigurowane jest modułami
+ 	2.1 Ładowane są moduły
+ 	2.1 Uruchamiane są bloki konfiguracjne modułów
+ 	2.2 Po załadowaniu wszystkich modułów odpalane są ich bloki run
+ 3. Kompilowany jest cały html od rootElementu. Compile zwraca funkcję linkującą
+ 4. funkcja linkująca wywołana jest z $rootScope
+ 5. Włącza się pierwszy $digest
+ 6. Aplikacja jest uruchomiona 
