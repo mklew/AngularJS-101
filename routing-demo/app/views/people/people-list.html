@@ -8,18 +8,22 @@ people-list.html
 	</div>
 
 	<div>
-		<div ng-repeat="person in people"
-			 ng-controller="PersonCtrl"
-			 class="col-md-offset-1 more-space-at-bottom">
-
-			<span ng-click="down=!down">{{ person.name }} {{ person.last }} 
-				<span class="glyphicon" 
-				ng-class="{'glyphicon-chevron-down' : down, 'glyphicon-chevron-up' : !down}"></span>
-			</span>
-			<div ng-show="!down">
-				<p>works in {{ person.job }} <a href="#/people/{{person.id}}/edit"><small>edit</small></a></p>
-			</div>
-			
-		</div>	
+		<table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Full name</th>
+            <th>Job sector</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="person in people"
+          		ng-controller="PersonCtrl">
+            <td>{{ person.id }}</td>
+            <td>{{person.name | camelCase }} {{person.last | camelCase}}</td>
+            <td>{{person.job | awesomeIT }} <a href="#/people/{{person.id}}/edit" class="pull-right glyphicon glyphicon-edit"></a></td>
+          </tr>
+        </tbody>
+      </table>
 	</div>
 </div>

@@ -8,6 +8,7 @@ people-edit.html
   </div>
   <button type="button" class="btn btn-success" ng-disabled="f.$invalid || f.$pristine || !isModified(person)" ng-click="editPerson(person)">Save changes</button>
   <button type="button" class="btn btn-default" ng-disabled="f.$pristine" ng-click="cancelChanges()">Cancel changes</button>
+  <a href="#/people" class="btn btn-default">To list</a>
 </form>
 <p class="text-success" ng-show="result.success">Successfully saved <a href="#/people" class="btn">Go to list</a></p>
 <p class="text-danger" ng-show="result.error">Error occured</p>

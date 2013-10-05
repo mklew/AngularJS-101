@@ -19,8 +19,7 @@
     	var uniqueId = function() {
     		var uniqueId = 100;
     		return function() {
-    			uniqueId = uniqueId + 1;
-    			return uniqueId;
+    			return uniqueId++;
     		}	
     	}();
     	
@@ -33,10 +32,10 @@
         function stubPeople($httpBackend) {
 
         	var people = [
-		        {id : 1, name : 'Kate', last : 'Smith', job : 'Finance'},
-		        {id : 2, name : 'Tom', last : 'Brown', job : 'IT'},
-		        {id : 3, name : 'John', last : 'Lock', job : 'Lost'},
-		        {id : 4, name : 'Paul', last : 'Alien', job : 'Entertainment'}
+		        {id : uniqueId(), name : 'Kate', last : 'Smith', job : 'Finance'},
+		        {id : uniqueId(), name : 'Tom', last : 'Brown', job : 'IT'},
+		        {id : uniqueId(), name : 'John', last : 'Lock', job : 'Lost'},
+		        {id : uniqueId(), name : 'Paul', last : 'Alien', job : 'Entertainment'}
 		    ]
 
         	$httpBackend.whenGET('rest/people').respond(people);
