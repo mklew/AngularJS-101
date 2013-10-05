@@ -1,23 +1,27 @@
 'use strict';
 
 angular.module('app.services', [])
-	.service('BasicService', function(){
+	.service('BasicService', function($http, $q){
     // Angular creates this service calling new on passed in function
-    var model = {
-      people : [
-        {id : 1, name : 'Kate', last : 'Smith', job : 'Finance'},
-        {id : 2, name : 'Tom', last : 'Brown', job : 'IT'},
-        {id : 3, name : 'John', last : 'Lock', job : 'Lost'},
-        {id : 4, name : 'Paul', last : 'Alien', job : 'Entertainment'}
-      ]
-    };
 
     this.getPeople = function() {
-      return model.people;
+      return $http.get('rest/people')
+    }
+    
+    this.addPerson = function(person) {
+      return $http.post('rest/people', person);
     }
 
-    this.countPeople = function() {
-      return model.people.length;
+    this.getPerson = function(id) {
+      var deferred = $q.defer();
+      $http.get('rest/people/' + id).then(function(response){
+        deferred.resolve(response.data);
+      });
+      return deferred.promise;
+    }
+
+    this.updatePerson = function(person) {
+      return $http.put('rest/people', person);
     }
   })
   .factory('PersonServiceFactory', [function(){

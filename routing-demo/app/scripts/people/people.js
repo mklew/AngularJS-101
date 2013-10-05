@@ -26,15 +26,13 @@ appPeople.controller('PeopleCtrl', ['$scope', 'BasicService',
 	function($scope, BasicService){
 	
 	$scope.controllerName = 'PeopleCtrl';
-	/**
-		Model is usually retrieved from some kind of service
-	*/
-	var people = BasicService.getPeople();
-
-	$scope.people = people;
+	
+	BasicService.getPeople().then(function(response){
+		$scope.people = response.data;	
+	});
 
 	$scope.countPeople = function() {
-		return BasicService.countPeople();
+		return $scope.people && $scope.people.length || 0;
 	}
 }]);
 

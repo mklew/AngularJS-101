@@ -11,6 +11,19 @@ routing.config(function($routeProvider){
 		.when('/people', {
 			templateUrl : 'views/people/people-list.html'
 		})
+		.when('/people/add' , {
+			templateUrl : 'views/people/people-add.html',
+			controller : 'PeopleAddCtrl'
+		})
+		.when('/people/:id/edit', {
+			templateUrl : 'views/people/people-edit.html',
+			resolve : {
+				person : function($route, BasicService){
+					return BasicService.getPerson($route.current.params.id);		
+				}
+			},
+			controller : 'PeopleEditCtrl'
+		})
 		.otherwise({
 			redirectTo : '/'
 		})

@@ -1,21 +1,25 @@
 people-list.html
 
 <div class="col-md-offset-1" ng-controller="PeopleCtrl">
-<!-- people.length could be used instead -->
-<p>There are {{ countPeople() }} people</p>
-<div>
-	<div ng-repeat="person in people"
-		 ng-controller="PersonCtrl"
-		 class="col-md-offset-1 more-space-at-bottom">
-
-		<span ng-click="down=!down">{{ person.name }} {{ person.last }} 
-			<span class="glyphicon" 
-			ng-class="{'glyphicon-chevron-down' : down, 'glyphicon-chevron-up' : !down}"></span>
-		</span>
-		<div ng-show="!down">
-			<p>works in {{ person.job }}</p>	      						
+	<div class="row">
+		<div class="col-md-span-3">
+			<p>There are {{ countPeople() }} people <a href="#/people/add" class="pull-right btn btn-default">Add person</a></p> 
 		</div>
-		
-	</div>	
-</div>
+	</div>
+
+	<div>
+		<div ng-repeat="person in people"
+			 ng-controller="PersonCtrl"
+			 class="col-md-offset-1 more-space-at-bottom">
+
+			<span ng-click="down=!down">{{ person.name }} {{ person.last }} 
+				<span class="glyphicon" 
+				ng-class="{'glyphicon-chevron-down' : down, 'glyphicon-chevron-up' : !down}"></span>
+			</span>
+			<div ng-show="!down">
+				<p>works in {{ person.job }} <a href="#/people/{{person.id}}/edit"><small>edit</small></a></p>
+			</div>
+			
+		</div>	
+	</div>
 </div>
