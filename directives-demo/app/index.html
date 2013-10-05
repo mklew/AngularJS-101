@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<title>Angular 101 Directives demo</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<!-- Bootstrap -->
+    	<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" media="screen">
+    	<style>
+    		body {
+			  padding-top: 50px;
+			  font-size : 22px;
+			}
+			.starter-template {
+			  padding: 40px 15px;
+			  text-align: center;
+			}
+			.more-space-at-bottom {
+				margin-bottom: 25px;
+			}
+			.block {
+				height: 1000px;
+			}
+			.target { 
+				padding-top: 80px; 
+				margin-top: -80px;
+			}
+			.nav {
+				font-size : 14px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <a class="navbar-brand" ng-click="lesson = 0" href="#">Angular 101 - Directives demo</a>
+	        </div>
+	        <div class="collapse navbar-collapse">
+	          <ul class="nav navbar-nav">
+	            <li ng-class="{active : lesson == 1}"><a href="#lesson" ng-click="lesson = 1; lessonHeader = 'Lesson 1. Writing directives'">Lesson 1</a></li>
+	          </ul>
+	        </div><!--/.nav-collapse -->
+	        <div>
+	        	<timer key="directivesDemo" minutes="10"></timer>
+	        </div>
+	      </div>	      
+	    </div>
+
+	    <div class="container">
+
+	      <div class="starter-template">
+	        <h1>Demo shows how to write angular directives</h1>
+	      </div>
+
+	      <section id="lesson" class="target">
+	      	<header>
+	      		<h2>{{ lessonHeader }}</h2>
+	      	</header>
+	      	<div ng-view ng-controller="PeopleAppCtrl">
+	      		
+	      	</div>
+          </section>
+
+	    </div>
+
+	</body>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/backendStub.js"></script>
+	<script src="scripts/demo/demo-utils.js"></script>
+	<script src="scripts/people/people.js"></script>
+	<script src="scripts/people/people-add.js"></script>
+	<script src="scripts/people/people-edit.js"></script>
+	<script src="scripts/people/filters.js"></script>
+	<script src="scripts/routing.js"></script>
+	<script src="scripts/services/services.js"></script>
+
+</html>

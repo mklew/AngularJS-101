@@ -1,0 +1,37 @@
+people-add.html
+<h2>Add new person</h2>
+<div class="col-md-6">
+<form name="f" novalidate="" role="form">
+  <div class="form-group" ng-class="{'has-error' : f.personName.$error && f.personName.$dirty, 'has-success' : f.personName.$valid}">
+    <label for="personName">First name</label>
+	<input id="personName" name="personName" type="text" class="form-control" ng-minlength="3" ng-model="person.name" required=""/>
+  </div>
+  <div class="form-group" ng-class="{'has-error' : f.personLast.$error && f.personLast.$dirty, 'has-success' : f.personLast.$valid}">
+    <label for="personLast">Last name</label>
+	<input id="personLast" name="personLast" type="text" class="form-control" ng-model="person.last" required=""/>
+  </div>
+  <div class="form-group" ng-class="{'has-error' : f.personJob.$error && f.personJob.$dirty, 'has-success' : f.personJob.$valid}">
+    <label for="personJob">Job sector</label>
+	<input id="personJob" name="personJob" type="text" class="form-control" ng-maxlength="50" ng-model="person.job" required=""/>
+  </div>
+  
+  <button type="button" class="btn btn-success" ng-disabled="f.$invalid" ng-click="addPerson(person)">Add</button>
+  <a href="#/people" class="btn btn-default">To list</a>
+</form>
+<p class="text-success" ng-show="result.success">Successfully saved<a href="#/people" class="btn">Go to list</a></p>
+<p class="text-danger" ng-show="result.error">Error occured</p>
+</div>
+<div class="col-md-6">
+	<pre>
+	First name errors {{ f.personName.$error }} <br />
+
+	Last name errors {{ f.personLast.$error }} <br />
+
+	Job errors {{ f.personJob.$error }} <br />
+
+	Is form valid? {{ f.$valid }} <br />
+	Is first name valid? {{ f.personName.$valid }} <br />
+	Is last name valid? {{ f.personLast.$valid }} <br />
+	Is job valid? {{ f.personJob.$valid }} <br />
+	</pre>
+</div>
