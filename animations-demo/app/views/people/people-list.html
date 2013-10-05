@@ -1,0 +1,30 @@
+people-list.html
+
+<div class="col-md-offset-1" ng-controller="PeopleCtrl">
+	<div class="row">
+
+		<div class="col-md-span-3">
+			<p>There are {{ countPeople() }} people. Search <input type="text" ng-model="search"/> <a href="#/people/add" class="pull-right btn btn-default">Add person</a></p> 
+		</div>
+	</div>
+
+	<div>
+		<table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Full name</th>
+            <th>Job sector</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="person in people | filter:search"
+          		ng-controller="PersonCtrl">
+            <td>{{ person.id }}</td>
+            <td>{{person.name | camelCase }} {{ person.last | camelCase }}</td>
+            <td>{{person.job | awesomeIT }} <a href="#/people/{{person.id}}/edit" class="pull-right glyphicon glyphicon-edit"></a></td>
+          </tr>
+        </tbody>
+      </table>
+	</div>
+</div>

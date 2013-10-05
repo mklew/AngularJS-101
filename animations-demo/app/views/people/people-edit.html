@@ -1,0 +1,22 @@
+people-edit.html
+<h2>Edit person - {{ person.name }} {{ person.last }}</h2>
+<div class="col-md-6">
+<form name="f" novalidate="" role="form">
+  <div class="form-group" ng-class="{'has-error' : f.personJob.$error && f.personJob.$dirty, 'has-success' : f.personJob.$valid}">
+    <label for="personJob">Job sector</label>
+	<input id="personJob" name="personJob" type="text" class="form-control" ng-maxlength="50" ng-model="person.job" required=""/>
+  </div>
+  <button type="button" class="btn btn-success" ng-disabled="f.$invalid || f.$pristine || !isModified(person)" ng-click="editPerson(person)">Save changes</button>
+  <button type="button" class="btn btn-default" ng-disabled="f.$pristine" ng-click="cancelChanges()">Cancel changes</button>
+  <a href="#/people" class="btn btn-default">To list</a>
+</form>
+<p class="text-success" ng-show="result.success">Successfully saved <a href="#/people" class="btn">Go to list</a></p>
+<p class="text-danger" ng-show="result.error">Error occured</p>
+</div>
+<div class="col-md-6">
+	<pre>
+	Job errors {{ f.personJob.$error }} <br />
+	Is form valid? {{ f.$valid }} <br />
+	Is job valid? {{ f.personJob.$valid }} <br />
+	</pre>
+</div>
