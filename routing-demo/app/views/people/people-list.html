@@ -21,7 +21,7 @@ people-list.html
           <tr ng-repeat="person in people | filter:search"
           		ng-controller="PersonCtrl">
             <td>{{ person.id }}</td>
-            <td>{{person.name | camelCase }} {{person.last | camelCase}}</td>
+            <td>{{person.name | camelCase }} {{ person.last | camelCase }}</td>
             <td>{{person.job | awesomeIT }} <a href="#/people/{{person.id}}/edit" class="pull-right glyphicon glyphicon-edit"></a></td>
           </tr>
         </tbody>

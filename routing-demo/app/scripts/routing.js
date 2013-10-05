@@ -18,8 +18,10 @@ routing.config(function($routeProvider){
 		.when('/people/:id/edit', {
 			templateUrl : 'views/people/people-edit.html',
 			resolve : {
-				person : function($route, BasicService){
-					return BasicService.getPerson($route.current.params.id);		
+				person : function($route, BasicService, $timeout){
+					return $timeout(function(){
+						return BasicService.getPerson($route.current.params.id)
+					}, 1000);		
 				}
 			},
 			controller : 'PeopleEditCtrl'
