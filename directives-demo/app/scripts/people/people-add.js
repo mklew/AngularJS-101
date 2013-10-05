@@ -1,6 +1,8 @@
 'use strict';
 
 angular.module('app.people').controller('PeopleAddCtrl', function($scope, BasicService){
+	$scope.person = {};
+
 	$scope.addPerson = function(person) {
 		BasicService.addPerson(person).then(function(){
 			$scope.result = {

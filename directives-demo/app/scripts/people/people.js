@@ -1,7 +1,7 @@
 'use strict';
 
 // Lesson 1 - how to use controllers
-var appPeople = angular.module('app.people', ['app.services']);
+var appPeople = angular.module('app.people', ['app.services', 'app.directives']);
 
 /**
 	Scope hierarchy:
