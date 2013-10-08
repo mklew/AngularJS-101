@@ -35,3 +35,7 @@ FAQ
 1. Co zrobić jak coś nie działa?
 
 Można zrobić issue na githubie, wspomnieć mnie w nim tak żebym dostał powiadomienie i coś tam naprawimy ;)
+
+Slajdy
+-----
+Link do bardzo obszernych slajdów ;) http://slid.es/mareklewandowski/angularjs
