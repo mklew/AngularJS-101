@@ -22,3 +22,17 @@ appDirectives.directive('anchor', function(){
 		template : '<a class="btn btn-default" ng-transclude></a>'
 	}
 })
+
+appDirectives.directive('alertOnEnter', function($window){
+	return {
+		scope :  {
+			msg : '=alertOnEnter'
+		},
+		link : function(scope, element, attrs) {
+			// scope.msg = 'nadpisalem Cie hahehehehe'
+			element.on('mouseenter', function(){
+				$window.alert(scope.msg);
+			})
+		}
+	}
+})
