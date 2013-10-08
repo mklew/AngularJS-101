@@ -1,6 +1,7 @@
 // Generated on 2013-07-10 using generator-angular 0.3.0
 'use strict';
-var LIVERELOAD_PORT = 35729;
+// var LIVERELOAD_PORT = 35729;
+var LIVERELOAD_PORT = 35730;
 var lrSnippet = require('connect-livereload')({ port: LIVERELOAD_PORT });
 var mountFolder = function (connect, dir) {
   return connect.static(require('path').resolve(dir));
