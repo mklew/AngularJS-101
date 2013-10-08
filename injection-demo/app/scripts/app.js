@@ -2,7 +2,7 @@
 
 // Order of dependencies matters only when there is name clash in what they can provide
 // in this example its constant named 'NameClash'
-var app = angular.module("app", ['demo.utils', 'module1', 'module2', 'module3']);
+var app = angular.module("app", ['demo.utils', 'module2','module3', 'module1']);
 
 
 // Ex 1
@@ -10,10 +10,10 @@ var app = angular.module("app", ['demo.utils', 'module1', 'module2', 'module3'])
 // DependencyInjection is done by name
 app.run(['$rootScope', 'Module1Constant', 'Module2Constant',
 	'Module3Constant', 
- function($rootScope, Module1Constant, Module2Constant, Module3Constant){
-	$rootScope.m1c = Module1Constant;
-	$rootScope.m2c = Module2Constant;
-	$rootScope.m3c = Module3Constant;
+ function(a, Module1Constant, Module2Constant, Module3Constant){
+	a.m1c = Module1Constant;
+	a.m2c = Module2Constant;
+	a.m3c = Module3Constant;
 }]);
 
 // Ex 2
